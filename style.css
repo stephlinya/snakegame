@@ -1,0 +1,33 @@
+html,body {
+    margin: 10;
+    padding: 10;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 { 
+    margin-top: 1.5rem;
+}
+
+
+.container { 
+    padding: 50px;
+}
+
+.grid { 
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.2rem;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.squareStyles { 
+    width: 20px;
+    height: 20px;
+    background: blue;
+}
