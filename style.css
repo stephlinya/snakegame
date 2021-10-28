@@ -34,3 +34,7 @@ h1, h2 {
 .snake {
     background-color: pink;
 }
+
+.apple { 
+    background-color: orangered;
+}
