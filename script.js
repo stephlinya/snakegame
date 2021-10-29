@@ -8,7 +8,7 @@ const width = 10;
 let appleIndex = 0;
 let totalScore = 0;
 let intervalTime = 1000;
-let speed = 0.7;
+const speed = 0.7;
 let timerId = 0;
 
 function createGrid(){
@@ -22,15 +22,22 @@ function createGrid(){
 
 createGrid();
 
-startBtn.addEventListener("click", startGame);
+currentSnake.forEach(index => squares[index].classList.add("snake"));
 
 function startGame(){
+    squares[appleIndex].classList.remove("apple");
+    currentSnake.forEach(index => squares[index].classList.remove("snake"));
+    currentSnake = [2, 1, 0];
+    totalScore = 0;
+    score.textContent = totalScore;
+    intervalTime = 1000;
+    direction = 1; 
+    clearInterval(timerId);
     timerId = setInterval(move, intervalTime);
     move();
     generateApple();
+    currentSnake.forEach(index => squares[index].classList.add("snake"));
 }
-
-currentSnake.forEach(index => squares[index].classList.add("snake"));
 
 function move(){
     if (
@@ -41,6 +48,7 @@ function move(){
         (squares[currentSnake[0]+direction].classList.contains("snake"))
         )
     {
+        console.log("you lose");
         return clearInterval(timerId);
     }
     
@@ -50,19 +58,12 @@ function move(){
     squares[currentSnake[0]].classList.add("snake");
 
     if (squares[currentSnake[0]].classList.contains("apple")){
-        //remove the class of apple
         squares[currentSnake[0]].classList.remove("apple");
-        //grow our snake by adding class of snake to it
         squares[tail].classList.add("snake");
-        //grow our snake array
         currentSnake.push(tail);
-        //generate new apple
         generateApple();
-        //add one to the score
         totalScore++;
-        //display our score
         score.textContent = totalScore;
-        //speed up our snake
         clearInterval(timerId);
         intervalTime = intervalTime * speed;
         timerId = setInterval(move,intervalTime);
@@ -89,4 +90,13 @@ function control(e) {
 }
 
 document.addEventListener("keyup", control);
+startBtn.classList.remove("blinking");
+startBtn.addEventListener("click", startGame);
+startBtn.addEventListener("mouseover", function(){
+    startBtn.classList.add("blinking");
+})
+
+startBtn.addEventListener("mouseout", function(){
+    startBtn.classList.remove("blinking");
+})
 

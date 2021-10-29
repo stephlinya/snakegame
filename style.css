@@ -3,27 +3,82 @@ html,body {
     padding: 10;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+@font-face{
+    font-family: "earlygameboy";
+    src: url(./pixelfont/earlygameboy.ttf);
+}
+
+body {
+    font-family: "earlygameboy", "Space Mono", monospace;
+    background-color: #8cb8ff;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
 }
 
 h1, h2 { 
     margin-top: 1.5rem;
+    text-align: center;
 }
 
 .container { 
     width: 600px;
-    margin: 0 auto;
+    margin: 10em auto;
     padding: 50px;
+    background-color: #9eb8ab;
+    border: 5px #2c3038;
+    border-style: dashed;
 }
 
 .grid { 
     width: 200px;
     height: 200px;
-    margin-bottom: 1.2rem; 
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+button{
+    margin: 2em auto;
+    padding: 15px 30px;
+    display: block;
+    font-family: "earlygameboy";
+    font-size: 1.2rem;
+    background-color: black;
+    color: #1fb86b;
+    border: 2px solid;
+    cursor: pointer;
+    animation-play-state: paused;
+}
+
+.blinking{
+    background-color: #1fb86b;
+    color: black;
+    animation: blinking 0.5s ease running;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blinking{
+    0%{
+        background-color: white;
+        color: #1fb86b;
+    }
+
+    100%{
+        background-color: #1fb86b;
+        color: white;
+    }
+
+    0%{
+        background-color: white;
+        color: #1fb86b;
+    }
 }
 
 .squareStyles { 
@@ -32,9 +87,11 @@ h1, h2 {
 }
 
 .snake {
-    background-color: pink;
+    background-color: #1fb86b;
+    border-radius: 2px;
 }
 
 .apple { 
     background-color: orangered;
+    border-radius: 60%;
 }
