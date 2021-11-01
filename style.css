@@ -10,11 +10,11 @@ html,body {
 
 body {
     font-family: "earlygameboy", "Space Mono", monospace;
-    background-color: #8cb8ff;
+    background-color: black;
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 h2{
@@ -28,11 +28,12 @@ h1, h2 {
 
 .container { 
     width: 600px;
-    margin: 10em auto;
+    margin: 5rem auto;
     padding: 50px;
     background-color: #9eb8ab;
     border: 5px #2c3038;
     border-style: dashed;
+    border-radius: 2px;
 }
 
 .grid { 
@@ -53,6 +54,7 @@ button{
     background-color: black;
     color: #1fb86b;
     border: 2px solid;
+    border-radius: 2px;
     cursor: pointer;
     animation-play-state: paused;
 }
@@ -92,6 +94,6 @@ button{
 }
 
 .apple { 
-    background-color: orangered;
+    background-color: #b3433b;
     border-radius: 60%;
 }
