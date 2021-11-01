@@ -28,7 +28,7 @@ h1, h2 {
 
 .container { 
     width: 600px;
-    margin: 5rem auto;
+    margin: 2rem auto;
     padding: 50px;
     background-color: #9eb8ab;
     border: 5px #2c3038;
@@ -97,3 +97,19 @@ button{
     background-color: #b3433b;
     border-radius: 60%;
 }
+
+.youLose{
+    text-transform: uppercase;
+}
+
+/*
+@keyframes loser { 
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+*/

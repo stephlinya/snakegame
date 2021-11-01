@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid");
 const startBtn = document.getElementById("start");
 const score = document.getElementById("score");
+const youLose = document.getElementById("lose");
 let squares = [];
 let currentSnake = [2, 1, 0];
 let direction = 1;
@@ -22,10 +23,13 @@ function createGrid(){
 
 createGrid();
 
+youLose.style.display = "none";
+
 currentSnake.forEach(index => squares[index].classList.add("snake"));
 
 function startGame(){
     squares[appleIndex].classList.remove("apple");
+    youLose.style.display = "none";
     currentSnake.forEach(index => squares[index].classList.remove("snake"));
     currentSnake = [2, 1, 0];
     totalScore = 0;
@@ -48,7 +52,7 @@ function move(){
         (squares[currentSnake[0]+direction].classList.contains("snake"))
         )
     {
-        console.log("you lose");
+        youLose.style.display = "block";
         return clearInterval(timerId);
     }
     
